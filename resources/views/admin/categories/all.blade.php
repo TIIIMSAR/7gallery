@@ -23,7 +23,6 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        @include('errors.message')
           <div class="row">
               <div class="col-12">
                   <div class="card">
@@ -58,12 +57,8 @@
                                 <td>{{ $category->title }}</td>
                                 <td>{{ $category->created_at }}</td>
                                 <td>
-                                    <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-default btn-icons"><i class="fa fa-edit"></i></a>
-                                    <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST" style="display: inline">
-                                      @csrf
-                                      @method('delete')
-                                      <button class="btn btn-default btn-icons" type="submit"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <a href="#" class="btn btn-default btn-icons"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-default btn-icons"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                               @endforeach
@@ -74,7 +69,13 @@
                   </div>
                   <!-- /.card -->
                   <div class="d-flex justify-content-center">
-                     {{ $categories->links() }}
+                      <ul class="pagination mt-3">
+                          <li class="page-item"><a class="page-link" href="#">«</a></li>
+                          <li class="page-item"><a class="page-link" href="#">۱</a></li>
+                          <li class="page-item"><a class="page-link" href="#">۲</a></li>
+                          <li class="page-item"><a class="page-link" href="#">۳</a></li>
+                          <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      </ul>
                   </div>
               </div>
           </div>
